@@ -1,4 +1,4 @@
-# front-end development database
+# Note
 
 I organized some front-end development learning materials.
 
