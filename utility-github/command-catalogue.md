@@ -1,12 +1,11 @@
-# 列表：常用指令目录
+# Github 常用命令
 
-- 基础指令
-- 远程仓库
-- 分支操作
-- 检查、比较、修补
-- 其他指令
-- Linux 命令
-- 公共参数说明
+- [基础指令](/)
+- [远程仓库](/)
+- [分支操作](/)
+- [检查、比较、修补](/)
+- [其他指令](/)
+- [公共参数说明](/)
 
 ## 基本指令
 
@@ -54,18 +53,6 @@ Inspection、Comparison and Patching 检查、比较和修补
 - reflog - 打印指针记录。
 - ls-files - 打印索引库。
 
-## Linux 命令
-
-- `$ cd [folderName]` - 进入文件夹
-- `$ echo [folderName] > [folderContent]` - 创建文件，添加内容
-- `$ mkdir [folderName]` - 创建文件夹
-- `$ rm [folderName]` - 删除文件
-- `$ find [path]` - 打印文件内容
-- `$ pwc [path]` - 进入路径
-- cat 文件操作
-	- `$ cat [options] [folderName]` - 打印 folderName 文件内容
-	- `$ cat > [folderName]` - 创建新文件
-	- `$ cat [folder_1] [folder_2] > [folderName]` - 合并多个文件
 
 ## 公共参数说明
 

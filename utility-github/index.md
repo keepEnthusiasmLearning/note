@@ -1,12 +1,8 @@
 # Github 版本控制系统
 
-## 理论知识
+## Git 对象
 
-### Git 对象
-
-**哈希码**
-
-使用 SHA1 算法将文件、目录、提交转换为对应的哈希码, 以 Git 对象形式保存到版本库 
+Description: 使用 SHA1 算法将文件、目录、提交转换为对应的哈希码并保存到 Git 版本库。
 
 **blob**
 
@@ -28,47 +24,33 @@
 - 指向根目录的 tree 对象
 - 指向上一个提交状态的 commit 对象
 
-### Git 区域
+## Git 区域
 
-| worktree   | 工作区, 本地编辑的文本。
-| staged   | 暂存区, 储存文件 blob 对象。`$ git add`
-| repository | 版本库、本地仓库, 储存目录、提交 tree、commit 对象。`$ git commit`
-| remote   | 远程仓库, 分为公有和私有仓库
+- worktree 工作区 - 本地编辑的文本
+- staged 暂存区 - 储存 `$ git add` 添加的 blog 对象
+- repository 本地仓库 - 储存 `$ git commit` 提交的 tree、commit 对象。
+- remote 远程仓库 - Github
 
-- .gitignore - 忽略, 指定不上传的文件类型
-- .git - 初始化时创建, 储存 Git 对象。`$ git init`
-  + `./objects` - 对象库：保存 git 对象
+## Git 文件
+
+- .gitignore - 定义忽略的，不上传的文件类型
+- .git - `$ git init` 时创建，用于储存 Git 对象。
+  + `./objects` - git 对象库
   + `./index` - 索引库
-  + `./HEAD` - 保存 HEAD 指针的指向 ref: refs/heads/master
+  + `./HEAD` - 保存 HEAD 指针的指向 `ref: refs/heads/master`
 
-### 分支
+## Git 分支
 
-每个 commit 作为下一个 commit 的父相连组成的逻辑线称为分支。
+Description: 每个 commit 作为下一个 commit 的父相连组成的逻辑线称为分支。
 
-- `master` - 默认指针，创建 repo 时自动创建。
+- `master` - 默认指针
 - `HEAD` - 当前指针，它总是指向当前所处的分支指针，即当前所处分支的最新提交。
-- `main` - gitHub 远程仓库的默认指针。
-
-**分支指针**
-
-总是指向当前分支的最新提交 commit。
-
-- develop - 开发分支
-- feature - 功能分支，根据功能需求创建。开发完成后合并到 develop
-- release - bug 修复与测试分支
-- hotfix - 紧急修复 master 分支 bug
-
-**头分离**
-
-HEAD 指针处于某个 commit 而非某个分支指针的状态
-
-- `$ git checkout cbd3348` - 当检出某个提交时
-- 可以在该状态开始修改，创建一个隐藏的分支。
-- 为这个隐藏分支命名，使它变为真实的分支。
-
-**`HEAD~[n]`**
-
-表示相对于 HEAD 之前的第 n 个提交
+- `HEAD~[n]` - 当前指针之前的第 n 次提交。
+- 分支指针 - 总是指向当前分支的最新提交 commit
+- 头分离 - HEAD 指针处于某个 commit 而非某个分支指针的状态
+  + `$ git checkout cbd3348` - 当检出某个提交时
+  + 可以在该状态开始修改，创建一个隐藏的分支。
+  + 为这个隐藏分支命名，使它变为真实的分支。
 
 -----------------------------------------------------------------------------------------
 ## 基本操作
@@ -100,3 +82,7 @@ HEAD 指针处于某个 commit 而非某个分支指针的状态
 从 GitHub 拉取到本地仓库
 
     $ git pull origin [ branchName ]
+
+将指定目录提交到指定分支
+
+    $ git subtree push --prefix=[ treeName ] origin [ branchName ]
